@@ -1,17 +1,26 @@
 class Player {
   String name;
-  int age;
+  int age, xp;
   String team;
 
   Player({
     required this.name,
     required this.age,
     required this.team,
+    required this.xp,
   });
+
+  Player.createRedPlayer({
+    required this.name,
+    required this.age,
+  })  : this.team = 'Manchester United',
+        this.xp = 0;
+
   void showPlayerInfo() {
     print('Name: $name');
     print('Age: $age');
     print('Team: $team');
+    print('XP: $xp');
   }
 }
 
@@ -20,7 +29,15 @@ void main() {
     name: 'Messi',
     age: 33,
     team: 'PSG',
+    xp: 0,
   );
 
   player1.showPlayerInfo();
+
+  var redplayer = Player.createRedPlayer(
+    name: 'Ronaldo',
+    age: 36,
+  );
+
+  redplayer.showPlayerInfo();
 }
