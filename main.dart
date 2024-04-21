@@ -1,15 +1,26 @@
-String sayHello({
-  required String name,
-  required int age,
-  required String country,
-}) {
-  return "Hello $name, you are $age years old, and you are from $country";
+class Player {
+  String name;
+  int age;
+  String team;
+
+  Player({
+    required this.name,
+    required this.age,
+    required this.team,
+  });
+  void showPlayerInfo() {
+    print('Name: $name');
+    print('Age: $age');
+    print('Team: $team');
+  }
 }
 
 void main() {
-  print(sayHello(
-    name: "jisoung",
-    age: 17,
-    country: "korea",
-  ));
+  var player1 = Player(
+    name: 'Messi',
+    age: 33,
+    team: 'PSG',
+  );
+
+  player1.showPlayerInfo();
 }
