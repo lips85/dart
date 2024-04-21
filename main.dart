@@ -1,7 +1,9 @@
+enum PlayerType { red, blue }
+
 class Player {
   String name;
   int age, xp;
-  String team;
+  PlayerType team;
 
   Player({
     required this.name,
@@ -13,7 +15,7 @@ class Player {
   Player.createRedPlayer({
     required this.name,
     required this.age,
-  })  : this.team = 'Manchester United',
+  })  : this.team = PlayerType.blue,
         this.xp = 0;
 
   void showPlayerInfo() {
@@ -28,7 +30,7 @@ void main() {
   var player1 = Player(
     name: 'Messi',
     age: 33,
-    team: 'PSG',
+    team: PlayerType.red,
     xp: 0,
   );
 
